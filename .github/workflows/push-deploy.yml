@@ -1,0 +1,14 @@
+name: push and Deploying
+
+on:
+    push:
+        branches:
+            master
+
+jobs:
+    build-push:
+        uses: ./.github/workflows/build-push.yml
+        secrets: inherit
+    deploy:
+        needs: [build-push]
+        uses: ./.github/workflows/build-push.yml
