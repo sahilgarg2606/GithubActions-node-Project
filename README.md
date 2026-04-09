@@ -1,3 +1,4 @@
+[![build and push](https://github.com/sahilgarg2606/GitHubActions-Practices/actions/workflows/build-push.yml/badge.svg)](https://github.com/sahilgarg2606/GitHubActions-Practices/actions/workflows/build-push.yml)
 # 🚀 Node Task Manager API (No Database)
 
 A production-style Node.js REST API built using Express, designed for DevOps and Docker practice without using any database.
