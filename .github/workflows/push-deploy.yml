@@ -12,4 +12,4 @@ jobs:
     deploy:
         needs: [build-push]
         secrets: inherit
-        uses: ./.github/workflows/build-push.yml
+        uses: ./.github/workflows/deploy.yml
