@@ -32,11 +32,11 @@ async function fetchTasks() {
       </div>
 
       <div>
-        <span class="badge ${task.completed ? 'bg-success' : 'bg-warning'} me-2">
+        <span class="badge ${task.completed ? 'bg-info' : 'bg-primary'} me-2">
           ${task.completed ? 'Done' : 'Pending'}
         </span>
 
-        <button class="btn btn-sm btn-danger" onclick="deleteTask('${task.id}')">
+        <button class="btn btn-sm btn-secondary" onclick="deleteTask('${task.id}')">
           <i class="bi bi-trash"></i>
         </button>
       </div>
