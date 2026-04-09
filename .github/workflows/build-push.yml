@@ -19,7 +19,7 @@ jobs:
 
 
             - name: Build and Push
-              if: github.ref == 'refs/head/main'
+              if: github.ref == 'refs/head/master'
               uses: docker/build-push-action@v6
               with:
                 push: true
