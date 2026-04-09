@@ -11,4 +11,5 @@ jobs:
         secrets: inherit
     deploy:
         needs: [build-push]
+        secrets: inherit
         uses: ./.github/workflows/build-push.yml
