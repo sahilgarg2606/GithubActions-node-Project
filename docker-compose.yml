@@ -1,7 +1,7 @@
 services:
   app:
     container_name: web-app
-    build: ${DOCKERHUB_USER}/github-project:${DOCKERHUB_TAG}
+    build: ${ DOCKERHUB_USER}/github-project:${DOCKERHUB_TAG}
     ports:
       - "5000:5000"
     
