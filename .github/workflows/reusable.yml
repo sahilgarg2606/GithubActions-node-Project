@@ -5,7 +5,6 @@ on:
         inputs:
             app_name:
                 type: string
-                default: "noduuu"
                 required: true
             environment:
                 type: string
