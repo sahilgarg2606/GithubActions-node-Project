@@ -11,7 +11,5 @@ jobs:
         with:
             app_name: "webu"
             environment: "production"
-        secrets:
-            docker_token: ${{ secrets.DOCKER_TOKEN }}
 
         
