@@ -20,7 +20,7 @@ jobs:
               uses: actions/checkout@v4
             
             - name: Building
-              run: echo "Building ${{ github.event.inputs.app_name }} for ${{ github.event.inputs.environment }} env"
+              run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }} env"
             
             - name: Token checker
               run: |
