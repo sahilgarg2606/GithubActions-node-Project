@@ -11,7 +11,7 @@ on:
                 default: 'staging'
                 required: true
         outputs:
-            build-vesion:
+            build_version:
                  value: ${{ jobs.reusable.outputs.build_version }}
 env:
     SECRETS : ${docker_token}
