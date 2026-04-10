@@ -6,12 +6,12 @@ on:
             - master
 
 jobs:
-    resuable-build:
-        uses: ./.github/workflows/resuable-build.yml
-        with:
-            app_name: "my=webu"
-            environment: "production"
-        secrets:
-            docker_token: ${{ secrets.DOCKER_TOKEN }}
+    resuable:
+        uses: ./.github/workflows/reusable.yml
+        # with:
+        #     app_name: "my=webu"
+        #     environment: "production"
+        # secrets:
+        #     docker_token: ${{ secrets.DOCKER_TOKEN }}
 
         
