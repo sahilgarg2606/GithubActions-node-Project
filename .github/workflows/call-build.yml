@@ -1,0 +1,18 @@
+name: call build
+
+on: 
+    push:
+        branches: 
+            - master
+
+jobs:
+    resuable-build:
+        uses: ./.github/workflows/resuaboe-build.yml
+        with:
+            app_name: "my=webu"
+            environment: "production"
+        secrets:
+            inherit: true
+            docker_token: ${{ secrets.DOCKER_TOKEN }}
+
+        
