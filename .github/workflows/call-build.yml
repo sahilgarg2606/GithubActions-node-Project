@@ -16,7 +16,7 @@ jobs:
         needs: [call-build]
         steps:
             - name: print version
-              run: echo "Build version is ${{ needs.call-build.outputs.build-version }}"
+              run: echo "Build version is ${{ needs.call-build.outputs.build_version }}"
 
 
         
