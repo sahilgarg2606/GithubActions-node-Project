@@ -11,5 +11,12 @@ jobs:
         with:
             app_name: "webu"
             environment: "production"
+    print-version:
+        runs-on: ubuntu-latest
+        needs: [call-build]
+        steps:
+            - name: print version
+              run: echo "Build version is ${{ needs.call-build.outputs.build-version }}"
+
 
         

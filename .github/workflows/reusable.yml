@@ -10,6 +10,9 @@ on:
                 type: string
                 default: 'staging'
                 required: true
+        outputs:
+            build-vesion:
+                 value: ${{ jobs.reusable.outputs.build-version }}
 env:
     SECRETS : ${docker_token}
 jobs:
@@ -18,7 +21,13 @@ jobs:
         steps:
             - name: checkout code
               uses: actions/checkout@v4
-            
+
+            - name: generate version
+              id: version
+              run: |
+                   VERSION="v1.0-$(git rev-parse --short HEAD)"
+                   echo "build-version=$VERSION" >> $GITHUB_OUTPUT
+
             - name: Building
               run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }} env"
             
