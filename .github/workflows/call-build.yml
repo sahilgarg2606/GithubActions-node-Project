@@ -11,6 +11,7 @@ jobs:
         with:
             app_name: "webu"
             environment: "production"
-        secrets: inherit
+        secrets:
+            docker_token: ${{ secrets.DOCKER_TOKEN }}
 
         

@@ -12,7 +12,7 @@ on:
                 default: 'staging'
                 required: true
 env:
-    SECRETS : ${{secrets.DOCKERHUB_TOKEN}}
+    SECRETS : ${docker_token}
 jobs:
     reusable:
         runs-on: ubuntu-latest
