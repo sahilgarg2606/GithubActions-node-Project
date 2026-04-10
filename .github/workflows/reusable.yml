@@ -18,7 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout code
-              uses: checkout/actions@v4
+              uses: actions/checkout@v4
             
             - name: Building
               run: echo "Building ${{ github.event.inputs.app_name }} for ${{ github.event.inputs.environment }} env"
