@@ -1,4 +1,4 @@
-name: call build
+name: call-build
 
 on: 
     push:
@@ -12,7 +12,6 @@ jobs:
             app_name: "my=webu"
             environment: "production"
         secrets:
-            inherit: true
             docker_token: ${{ secrets.DOCKER_TOKEN }}
 
         
