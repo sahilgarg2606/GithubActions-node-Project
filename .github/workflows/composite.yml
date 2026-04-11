@@ -13,7 +13,7 @@ jobs:
 
             - name: run costom greet
               id: greet
-              uses: ./.github/actions/setup-and-greet/actions.yml
+              uses: ./.github/actions/setup-and-greet/
               with:
                 name: "Sahil"
                 langauge: "Punjabi"
