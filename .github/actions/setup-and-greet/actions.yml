@@ -1,0 +1,30 @@
+name: actions
+on: 
+  workflow_call:
+    inputs:
+      name:
+         type: string
+         required: true
+
+      language:
+         required: true
+         type: string
+         default: 'eng'
+    outputs:
+        greeted:
+          value: ${{ steps.output-step.outputs.greeted}}
+runs:
+   using: "composite"
+   steps:
+    - name: print inputs
+      run: echo " language : ${{ inputs.language }} name: ${{inputs.name}}"
+    - name: print system info
+      run: | 
+         echo "Date : $(date)"
+         echo "OS: $RUNNER_OS"
+
+    - name: set output
+      id: output-step
+      shell: bash
+      run: echo "greeted=true" >> $GITHUB_OUTPUT
+         
