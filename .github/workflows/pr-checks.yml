@@ -48,7 +48,7 @@ jobs:
               run: |
                 BRANCH_NAME="${{ github.head_ref  }}"
                 echo "checking pattern: $BRANCH_NAME"
-                if [[ "$BRANCH_NAME" =~ ^(feature|fix|docs)/.+$ ]]; then
+                if [[ "$BRANCH_NAME" =~ ^(feature|fix|docs|tester)/.+$ ]]; then
                     echo "branch name valid"
                 else
                     echo "not valid branch"
