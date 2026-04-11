@@ -48,7 +48,7 @@ jobs:
               run: |
                 BRANCH_NAME="${{ github.head_ref  }}"
                 echo "checking pattern: $BRANCH_NAME"
-                if [[ "$BRANCH_NAME" =~ ^(feature|fix|docs|tester)/.+$ ]]; then
+                if [[ "$BRANCH_NAME" =~ ^(feature|fix|tester)/.+$ ]]; then
                     echo "branch name valid"
                 else
                     echo "not valid branch"
@@ -59,7 +59,7 @@ jobs:
         steps:
             - name: pr body checkout
               run: |
-                PR_BODY=${{ github.event.pull_request.body }}"
+                PR_BODY="${{ github.event.pull_request.body }}"
                 echo "checking"
                 if [ -z "$PR_BODY" == "null"]; then
                    echo "warning : pr empty is empty"
