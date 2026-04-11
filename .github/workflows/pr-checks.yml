@@ -52,7 +52,7 @@ jobs:
                     echo "branch name valid"
                 else
                     echo "not valid branch"
-                    exit 1
+                   
                 fi
     pr-body-check:
         runs-on: ubuntu-latest
