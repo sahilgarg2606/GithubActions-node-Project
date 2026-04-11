@@ -54,3 +54,15 @@ jobs:
                     echo "not valid branch"
                     exit 1
                 fi
+    pr-body-check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: pr body checkout
+              run: |
+                PR_BODY=${{ github.event.pull_request.body }}"
+                echo "checking"
+                if [ -z "$PR_BODY" == "null"]; then
+                   echo "warning : pr empty is empty"
+                else 
+                   echo "pr descripting is present"
+                fi
