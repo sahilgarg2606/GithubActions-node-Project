@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+    name: node-app-deployment
+    namespace: node-app-namespace
+    labels:
+       app: node-app-labels
+
+spec:
+    selector:
+        matchLabels:
+            app: node-app-labels
+    replicas: 3
+    template:
+        metadata: 
+            labels:
+                app: node-app-labels
+        spec:
+            containers: 
+                - name: task-manager
+                  image: sahil260605/github-project:latest
+                  ports:
+                       - containerPort: 5000
