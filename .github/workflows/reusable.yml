@@ -1,0 +1,48 @@
+name: reusable-build
+
+on:
+  workflow_call:
+    inputs:
+      app_name:
+        type: string
+        required: true
+      environment:
+        type: string
+        required: true
+        default: staging
+    secrets:
+      docker_token:
+        required: true
+    outputs:
+      build_version:
+        value: ${{ jobs.reusable.outputs.build_version }}
+
+jobs:
+  reusable:
+    runs-on: ubuntu-latest
+
+    outputs:
+      build_version: ${{ steps.version.outputs.build_version }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: generate version
+        id: version
+        run: |
+          VERSION="v1.0-$(git rev-parse --short HEAD)"
+          echo "build_version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Building
+        run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }} env"
+
+      - name: Token checker
+        env:
+          DOCKER_TOKEN: ${{ secrets.docker_token }}
+        run: |
+          if [ -n "$DOCKER_TOKEN" ]; then
+            echo "Docker token is set: true"
+          else
+            echo "Docker token is set: false"
+            exit 1
+          fi
